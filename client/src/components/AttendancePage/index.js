@@ -1,7 +1,8 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useContext} from 'react';
 import axios from 'axios';
 
 import './AttendancePage.css';
+import urlContext from '../../contexts/urlContext'
 
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
@@ -9,6 +10,10 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
 const AttendancePage = () => {
+
+    const serverContext = useContext(urlContext);
+    const serverUrl = serverContext.serverUrl;
+
 
     const [isProcessing, setIsProcessing] = useState(false);
     const [name, setName] = useState(localStorage.getItem('name') || "");
@@ -45,8 +50,7 @@ const AttendancePage = () => {
                 "attendeeName": name,
                 "attendeeEmail": email
               }        
-            //axios.post(`${window.location.href}login`, userCredentials)
-            axios.post(`${window.location.href}/api/attendees`, attendeeDetails)
+            axios.post(`${serverUrl}/api/attendees`, attendeeDetails)
             .then(res => {
                 if(res.status === 200){
                     alert("Success! You have been marked present.")

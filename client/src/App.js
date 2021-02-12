@@ -23,7 +23,7 @@ function App() {
   }
 
   const contextValue = {
-    serverUrl : window.location.href
+    serverUrl : 'https://pmc140-pioneers.herokuapp.com'
   }
 
   console.log(contextValue);

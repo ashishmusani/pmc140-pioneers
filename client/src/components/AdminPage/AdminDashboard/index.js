@@ -18,7 +18,6 @@ const AdminDashboard = (props) => {
 
     const serverContext = useContext(urlContext);
     const serverUrl = serverContext.serverUrl;
-    console.log(serverUrl);
 
     const [currentTab, setCurrentTab] = useState();
     const [attendees, setAttendees] = useState([]);
