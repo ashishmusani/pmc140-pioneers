@@ -26,6 +26,8 @@ function App() {
     serverUrl : window.location.href
   }
 
+  console.log(contextValue);
+
   return (
     <urlContext.Provider value={contextValue}>
       <div className="App" style={backgroundStyle}>
