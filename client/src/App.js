@@ -13,6 +13,8 @@ import AdminPage from './components/AdminPage';
 
 function App() {
 
+  console.log(process.env.SERVER_URL)
+
   const backgroundStyle = {
     background: `url('${process.env.PUBLIC_URL}/bg-image3.png')`,
     backgroundRepeat: "no-repeat",

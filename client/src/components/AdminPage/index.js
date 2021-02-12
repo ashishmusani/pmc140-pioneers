@@ -12,6 +12,8 @@ import Button from 'react-bootstrap/Button';
 
 const AdminPage = () => {
 
+    console.log(process.env.SERVER_URL)
+
     const [isProcessing, setIsProcessing] = useState(false);
     const [username, setUsername] = useState(localStorage.getItem('username') || "");
     const [password, setPassword] = useState("");
