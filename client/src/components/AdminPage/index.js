@@ -12,8 +12,6 @@ import Button from 'react-bootstrap/Button';
 
 const AdminPage = () => {
 
-    console.log(process.env.SERVER_URL)
-
     const [isProcessing, setIsProcessing] = useState(false);
     const [username, setUsername] = useState(localStorage.getItem('username') || "");
     const [password, setPassword] = useState("");
@@ -34,7 +32,7 @@ const AdminPage = () => {
                 "username": username,
                 "password": password
               }        
-            axios.post(`${process.env.SERVER_URL}/api/login`, userDetails)
+            axios.post(`${window.location.href}/api/login`, userDetails)
             .then(res => {
                 if(res.status === 200){
                     setIsAdmin(true);

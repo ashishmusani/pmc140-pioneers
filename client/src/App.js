@@ -11,9 +11,9 @@ import AttendancePage from './components/AttendancePage';
 import QuestionPage from './components/QuestionPage';
 import AdminPage from './components/AdminPage';
 
-function App() {
+import urlContext from './contexts/urlContext';
 
-  console.log(process.env.SERVER_URL)
+function App() {
 
   const backgroundStyle = {
     background: `url('${process.env.PUBLIC_URL}/bg-image3.png')`,
@@ -22,7 +22,12 @@ function App() {
     backgroundAttachment: "fixed"
   }
 
+  const contextValue = {
+    serverUrl : window.location.href
+  }
+
   return (
+    <urlContext.Provider value={contextValue}>
       <div className="App" style={backgroundStyle}>
         <Header />
         <Router>
@@ -54,6 +59,7 @@ function App() {
           </Switch>
         </Router>
       </div>
+    </urlContext.Provider>
   );
 }
 
