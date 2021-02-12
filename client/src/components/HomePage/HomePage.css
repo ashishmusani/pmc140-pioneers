@@ -1,0 +1,56 @@
+#homepage{
+    height: 100%;
+    text-align: center;
+    padding-top: 10vh;
+}
+
+#homepage-header {
+    position: relative;
+    animation:1s headerAnimation 0.5s forwards;
+    opacity: 0;
+    font-size: 11vmin;
+}
+
+#homepage-sub-header{
+    position: relative;
+    animation: 0.5s subHeaderAnimation 1.5s forwards;
+    opacity: 0;
+}
+
+#homepage-title{
+    position: relative;
+    animation: 2s titleAnimation 2s forwards;
+    opacity: 0;
+    font-size: 15vmin;
+}
+
+@keyframes headerAnimation {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes subHeaderAnimation {
+    from{
+        opacity: 0;
+        font-size: 0vh;
+    }
+    to{
+        opacity: 1;
+        font-size: 5vmin;
+    }
+}
+
+@keyframes titleAnimation {
+    from{
+        transform: translateY(200px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
