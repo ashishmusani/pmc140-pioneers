@@ -46,7 +46,7 @@ const AttendancePage = () => {
                 "attendeeEmail": email
               }        
             //axios.post(`${window.location.href}login`, userCredentials)
-            axios.post('http://localhost:5000/api/attendees', attendeeDetails)
+            axios.post(`${window.location.href}api/attendees`, attendeeDetails)
             .then(res => {
                 if(res.status === 200){
                     alert("Success! You have been marked present.")

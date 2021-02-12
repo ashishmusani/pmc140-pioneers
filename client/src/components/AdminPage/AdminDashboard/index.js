@@ -21,7 +21,7 @@ const AdminDashboard = (props) => {
     const [polls, setPolls] = useState([]);
 
     const fetchAttendees = () => {
-        axios.get('http://localhost:5000/api/attendees')
+        axios.get(`${window.location.href}api/attendees`)
         .then(res => {
             res.data && setAttendees([...res.data])
         })
