@@ -32,8 +32,7 @@ const AdminPage = () => {
                 "username": username,
                 "password": password
               }        
-            //axios.post(`${window.location.href}login`, userCredentials)
-            axios.post(`${window.location.href}api/login`, userDetails)
+            axios.post(`${process.env.SERVER_URL}/api/login`, userDetails)
             .then(res => {
                 if(res.status === 200){
                     setIsAdmin(true);
