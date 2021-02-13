@@ -17,7 +17,6 @@ mongoose.connect(dbConnectionUrl, {'useNewUrlParser': true, useUnifiedTopology: 
 ;
 const Attendee = require('./models/attendeeModel');
 const User = require('./models/userModel');
-console.log(mongoose.connection.readyState);
 
 app.listen(PORT, ()=>{
   console.log("Server listening on port " + PORT)
@@ -47,6 +46,7 @@ app.post('/api/login', (req,res)=>{
 
 
 app.get('/api/attendees', (req,res)=>{
+      console.log(mongoose.connection.readyState);
       Attendee.find((err, attendees) => {
         console.log(attendees);
         if(err){
