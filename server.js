@@ -17,7 +17,7 @@ mongoose.connect(dbConnectionUrl, {'useNewUrlParser': true, useUnifiedTopology: 
 ;
 const Attendee = require('./models/attendeeModel');
 const User = require('./models/userModel');
-console.log(mongoose);
+console.log(mongoose.connection.readyState);
 
 app.listen(PORT, ()=>{
   console.log("Server listening on port " + PORT)
