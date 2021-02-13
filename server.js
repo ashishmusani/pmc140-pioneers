@@ -48,6 +48,10 @@ app.post('/api/login', (req,res)=>{
 
 app.get('/api/attendees', (req,res)=>{
       Attendee.find((err, attendees) => {
+        console.log(attendees);
+        if(err){
+          console.log(err);
+        }
         res.send(attendees)
       })
     })
