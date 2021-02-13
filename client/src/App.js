@@ -14,8 +14,7 @@ import AdminPage from './components/AdminPage';
 function App() {
 
   const backgroundStyle = {
-    background: `url('${process.env.PUBLIC_URL}/bg-image3.png')`,
-    backgroundRepeat: "no-repeat",
+    background: `url('${process.env.PUBLIC_URL}/background.png') no-repeat center center`,
     backgroundSize: "cover",
     backgroundAttachment: "fixed"
   }
@@ -31,15 +30,15 @@ function App() {
             <Route path='/about' exact>
               <AboutPage />
             </Route>
-            <Route path='/announcements' exact>
+            {/* <Route path='/announcements' exact>
               <AnnouncementsPage />
-            </Route>
+            </Route> */}
             <Route path='/polls' exact>
               Polls
             </Route>
-            <Route path='/attendance' exact>
+            {/* <Route path='/attendance' exact>
               <AttendancePage />
-            </Route>
+            </Route> */}
             <Route path='/question' exact>
               <QuestionPage />
             </Route>

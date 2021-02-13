@@ -1,27 +1,70 @@
-#homepage{
-    height: 100%;
+.homepage{
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    top: 40%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);    
     text-align: center;
-    padding-top: 10vh;
 }
 
-#homepage-header {
+.homepage-header {
     position: relative;
     animation:1s headerAnimation 0.5s forwards;
     opacity: 0;
     font-size: 11vmin;
+    height: 14vmin;
 }
 
-#homepage-sub-header{
+.homepage-sub-header{
     position: relative;
     animation: 0.5s subHeaderAnimation 1.5s forwards;
     opacity: 0;
+    font-size: 5vmin;
 }
 
-#homepage-title{
+.homepage-title{
+    display: inline-block;
     position: relative;
     animation: 2s titleAnimation 2s forwards;
     opacity: 0;
-    font-size: 15vmin;
+}
+
+.homepage-title #homepage-title-1 {
+    position: relative;
+    padding-left: 11%;
+    text-align: left;
+    font-size: 6vmin;
+    height: 0px;
+}
+
+.homepage-title #homepage-title-2 {
+    position: relative;
+    margin-top: -1.5vmin;
+    font-size: 16vmin;
+    height: 0px;
+}
+
+.homepage-title #homepage-title-3 {
+    text-align: right;
+    padding-top: 16vmin;
+    position: relative;
+    font-size: 6vmin;
+    height: 0px;
+}
+
+.homepage-tagline{
+    padding-top: 4vmin;
+    animation: 8s taglineAnimation 2.5s forwards;
+    opacity: 0;
+    font-size: 4vmin;
+}
+
+.homepage-schedule{
+    padding-top: 10vmin;
+    font-size: 3.8vmin;
+    animation: 8s scheduleAnimation 3s forwards;
+    opacity: 0;
 }
 
 @keyframes headerAnimation {
@@ -36,11 +79,9 @@
 @keyframes subHeaderAnimation {
     from{
         opacity: 0;
-        font-size: 0vh;
     }
     to{
         opacity: 1;
-        font-size: 5vmin;
     }
 }
 
@@ -51,6 +92,25 @@
     }
     to{
         transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes taglineAnimation {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+
+@keyframes scheduleAnimation {
+    from{
+        opacity: 0;
+    }
+    to{
         opacity: 1;
     }
 }

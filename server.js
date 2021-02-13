@@ -14,6 +14,7 @@ const dbConnectionUrl = `mongodb+srv://im_admin:HAkqPt8yOHjQn6GI@cluster0.dgglj.
 mongoose.connect(dbConnectionUrl, {'useNewUrlParser': true, useUnifiedTopology: true } );
 const Attendee = require('./models/attendeeModel');
 const User = require('./models/userModel');
+const Question = require('./models/questionModel');
 
 
 app.listen(PORT, ()=>{
@@ -58,6 +59,39 @@ app.get('/api/attendees', (req,res)=>{
         }
       })
     })
+
+app.get('/api/attendees', (req,res)=>{
+      Attendee.find((err, attendees) => {
+        res.send(attendees)
+      })
+    })
+    .post('/api/attendees', (req,res)=>{
+      const newAttendee = req.body;
+      Attendee.create(newAttendee, (err,data)=>{
+        if(err){
+          return res.status(500).send(err);
+        } else {
+          return res.status(200).send(data)
+        }
+      })
+    });
+
+app.get('/api/questions', (req,res)=>{
+    Question.find((err, questions) => {
+      res.send(questions)
+    })
+  })
+  .post('/api/questions', (req,res)=>{
+    const newQuestion = req.body;
+    Question.create(newQuestion, (err,data)=>{
+      if(err){
+        return res.status(500).send(err);
+      } else {
+        return res.status(200).send(data)
+      }
+    })
+  })
+
 
 app.get('*', (req,res) =>{
   res.sendFile(path.join(__dirname+'/client/build/index.html'));

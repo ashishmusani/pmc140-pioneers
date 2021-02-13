@@ -31,7 +31,13 @@ const AdminDashboard = (props) => {
     }
 
     const fetchQuestions = () => {
-        console.log("Fetching questions")
+        axios.get('http://localhost:5000/api/questions')
+        .then(res => {
+            res.data && setQuestions([...res.data])
+        })
+        .catch(err => {
+            alert("Oops there was a problem fetching. Please try again")
+        })
     }
 
     const fetchPolls = () => {

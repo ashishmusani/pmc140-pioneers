@@ -63,6 +63,7 @@ const AdminPage = () => {
 
     const logOut = () => {
         setUsername("");
+        setPassword("");
         setIsAdmin("");
         localStorage.removeItem("username");
         localStorage.removeItem("isAdmin");
