@@ -9,8 +9,7 @@ app.use(express.json());
 app.use(cors());
 app.use(express.static(path.join(__dirname, './client/build')));
 
-//const dbConnectionUrl = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.dgglj.mongodb.net/instant_messenger?retryWrites=true&w=majority`
-const dbConnectionUrl = `mongodb+srv://im_admin:HAkqPt8yOHjQn6GI@cluster0.dgglj.mongodb.net/symposium?retryWrites=true&w=majority`
+const dbConnectionUrl = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.dgglj.mongodb.net/symposium?retryWrites=true&w=majority`;
 mongoose.connect(dbConnectionUrl, {'useNewUrlParser': true, useUnifiedTopology: true } );
 const Attendee = require('./models/attendeeModel');
 const User = require('./models/userModel');
@@ -21,16 +20,9 @@ app.listen(PORT, ()=>{
   console.log("Server listening on port " + PORT)
 })
 
-// app.get('/', (req,res) => {
-//   res.send("Welcome");
-// })
-
 app.post('/api/login', (req,res)=>{
   const username = req.body.username;
   const password = req.body.password;
-
-  console.log(username);
-  console.log(password);
 
   User.findOne({username, password}, (err, user) => {
     console.log(user);

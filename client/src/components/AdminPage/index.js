@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import axios from 'axios';
 
 import './AdminPage.css';
+import urlContext from '../../contexts/urlContext';
 
 import AdminDashboard from './AdminDashboard';
 
@@ -11,6 +12,9 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
 const AdminPage = () => {
+
+    const serverContext = useContext(urlContext);
+    const serverUrl = serverContext.serverUrl;
 
     const [isProcessing, setIsProcessing] = useState(false);
     const [username, setUsername] = useState(localStorage.getItem('username') || "");
@@ -32,8 +36,7 @@ const AdminPage = () => {
                 "username": username,
                 "password": password
               }        
-            //axios.post(`${window.location.href}login`, userCredentials)
-            axios.post('http://localhost:5000/api/login', userDetails)
+            axios.post(`${serverUrl}/api/login`, userDetails)
             .then(res => {
                 if(res.status === 200){
                     setIsAdmin(true);

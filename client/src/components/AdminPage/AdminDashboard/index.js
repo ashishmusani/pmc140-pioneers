@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-import './AdminDashboard.css'
+import './AdminDashboard.css';
+import urlContext from '../../../contexts/urlContext';
 
 import AttendeesTab from './Tabs/AttendeesTab';
 import PollsTab from './Tabs/PollsTab';
@@ -15,13 +16,16 @@ const AdminDashboard = (props) => {
 
     const logOut = props.logOut;
 
+    const serverContext = useContext(urlContext);
+    const serverUrl = serverContext.serverUrl;
+
     const [currentTab, setCurrentTab] = useState();
     const [attendees, setAttendees] = useState([]);
     const [questions, setQuestions] = useState([]);
     const [polls, setPolls] = useState([]);
 
     const fetchAttendees = () => {
-        axios.get('http://localhost:5000/api/attendees')
+        axios.get(`${serverUrl}/api/attendees`)
         .then(res => {
             res.data && setAttendees([...res.data])
         })
@@ -31,7 +35,7 @@ const AdminDashboard = (props) => {
     }
 
     const fetchQuestions = () => {
-        axios.get('http://localhost:5000/api/questions')
+        axios.get(`${serverUrl}/api/questions`)
         .then(res => {
             res.data && setQuestions([...res.data])
         })

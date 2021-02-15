@@ -1,12 +1,18 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 
+import urlContext from '../../../contexts/urlContext';
+
+
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
 const QuestionPage = () => {
+
+    const serverContext = useContext(urlContext);
+    const serverUrl = serverContext.serverUrl;
 
     const [isProcessing, setIsProcessing] = useState(false);
     const [name, setName] = useState("");
@@ -45,7 +51,7 @@ const QuestionPage = () => {
                 "email": email,
                 "question": question
               }        
-            axios.post('http://localhost:5000/api/questions', questionDetails)
+            axios.post(`${serverUrl}/api/questions`, questionDetails)
             .then(res => {
                 if(res.status === 200){
                     alert("Success! Your question has been submitted.")

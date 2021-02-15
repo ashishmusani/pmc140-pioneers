@@ -12,6 +12,8 @@ import QuestionPage from './components/QuestionPage';
 import AdminPage from './components/AdminPage';
 import TeamPage from './components/TeamPage';
 
+import urlContext from './contexts/urlContext';
+
 function App() {
 
   const backgroundStyle = {
@@ -20,7 +22,12 @@ function App() {
     backgroundAttachment: "fixed"
   }
 
+  const contextValue = {
+    serverUrl : 'https://pmc140-pioneers.herokuapp.com'
+  }
+
   return (
+    <urlContext.Provider value={contextValue}>
       <div className="App" style={backgroundStyle}>
         <Header />
         <Router>
@@ -52,6 +59,7 @@ function App() {
           </Switch>
         </Router>
       </div>
+    </urlContext.Provider>
   );
 }
 
