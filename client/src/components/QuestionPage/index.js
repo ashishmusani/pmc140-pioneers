@@ -52,16 +52,9 @@ const QuestionPage = () => {
                 "question": question
               }
             
-            //
-            console.log("ServerUrl: " + serverUrl);
-            console.log("questionDetails:");
-            console.log(questionDetails);
-            //
 
             axios.post(`${serverUrl}/api/questions`, questionDetails)
             .then(res => {
-                console.log("res");
-                console.log(res);
                 if(res.status === 200){
                     alert("Success! Your question has been submitted.")
                     setName("");
