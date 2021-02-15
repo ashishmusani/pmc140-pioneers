@@ -71,7 +71,7 @@ const QuestionPage = () => {
 
     return (
         <Form id="attendancePage" >
-            <Form.Group className="justify-content-center" as={Row}>
+           <Form.Group className="justify-content-center" as={Row}>
                 <Form.Label column sm="3" md="1" lg="1">
                     Full Name
                 </Form.Label>
@@ -118,6 +118,12 @@ const QuestionPage = () => {
                     rows={3} 
                     disabled={isProcessing}
                     />
+                </Col>
+            </Form.Group>
+
+            <Form.Group className="justify-content-center" as={Row}>
+                <Col sm="6" md="5" lg="5">
+                This information will be used only for communication and reporting purposes.
                 </Col>
             </Form.Group>
             <Form.Group as={Row} className="justify-content-center">

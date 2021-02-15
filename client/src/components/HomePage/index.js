@@ -36,6 +36,9 @@ const HomePage = () => {
                 17 Feb, 2021 9:00 PM EST<br/>
                 18 Feb, 2021 7:30 AM IST
             </div>
+            <div className="homepage-info">
+                Zoom meeting link will be available here before the session
+            </div>
         </div>        
     )
 }

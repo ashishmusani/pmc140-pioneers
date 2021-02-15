@@ -16,9 +16,23 @@ const AboutPage = () => {
                 <div id="speaker-name">
                     Bjoern Kingsley
                 </div>
+                <div id="speaker-designation">
+                    Senior Scrum Master / Agile Coach<br/>
+                    Mackenzie Investments
+                </div>
                 <div id="speaker-details">
-                For the introduction, you can mention that my new title starting March will be Director, Agile Learning and Community Engagement / Lead Agile Coach
-                at Manulife. I will be involved in planning the rollout of global Agile transformation for Manulife worldwide with its more than 30,000 employees.
+                    Mr. Bjoern Kingsley, based in Toronto, is a Senior Scrum Master at 
+                    Mackenzie Investments. Starting March, he will be with Manulife, a Canadian 
+                    multinational insurance company and financial services provider, as the Director 
+                    for Agile Learning and Community Engagement / Lead Agile Coach. In this new 
+                    position, he will be involved in planning the rollout of global Agile 
+                    transformation for Manulife worldwide with its more than 30,000 employees.
+                <br/>
+                </div>
+                <div id="speaker-linkedin">
+                    <a href="https://www.linkedin.com/in/bjoernkingsley/" target="_blank">
+                        <img id="linkedin-profile" src="linkedin.png" />
+                    </a>
                 </div>
             </div>
         </div>        

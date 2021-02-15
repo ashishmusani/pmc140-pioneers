@@ -10,6 +10,7 @@ import AnnouncementsPage from './components/AnnouncementsPage';
 import AttendancePage from './components/AttendancePage';
 import QuestionPage from './components/QuestionPage';
 import AdminPage from './components/AdminPage';
+import TeamPage from './components/TeamPage';
 
 function App() {
 
@@ -33,14 +34,14 @@ function App() {
             {/* <Route path='/announcements' exact>
               <AnnouncementsPage />
             </Route> */}
-            <Route path='/polls' exact>
-              Polls
-            </Route>
             {/* <Route path='/attendance' exact>
               <AttendancePage />
             </Route> */}
             <Route path='/question' exact>
               <QuestionPage />
+            </Route>
+            <Route path='/team' exact>
+              <TeamPage />
             </Route>
             <Route path='/admin' exact>
               <AdminPage />

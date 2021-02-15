@@ -3,7 +3,7 @@
     margin: 0;
     position: absolute;
     width: 100%;
-    top: 40%;
+    top: 45%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);    
     text-align: center;
@@ -24,23 +24,50 @@
 .detail-holder{
     position: relative;
     padding: 0 6vmin;
-    justify-content:end;
 }
 
 #speaker-name{
     position: relative;
+    padding-top: 2vmin;
     opacity: 0;
     animation: 2s nameAnimation 1s forwards;
     font-size: 7vmin;
+    line-height: 7vmin;
+    height: 100%;
+    color: #5D5C61;
+}
+
+#speaker-designation{
+    padding-top: 1vmin;
+    position: relative;
+    opacity: 0;
+    animation: 2s nameAnimation 1s forwards;
+    font-size: 4vmin;
+    line-height: 4vmin;
+    color: #379683;
 }
 
 #speaker-details{
+    padding-top: 2vmin;
     position: relative;
     opacity: 0;
     animation: 2s detailAnimation 1s forwards;
-    font-size: 4vmin;
+    font-size: 3.5vmin;
+    line-height: 5vmin;
+    color: #557A95;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
+#speaker-linkedin{
+    opacity: 0;
+    animation: 2s detailAnimation 1s forwards;
+}
+
+#linkedin-profile{
+    padding-top: 3vmin;
+    height: 8vmin;
+}
 
 @keyframes photoAnimation {
     from{
@@ -62,7 +89,7 @@
 
 @keyframes detailAnimation {
     from{
-        transform: translateY(200px);
+        transform: translateY(50px);
         opacity: 0;
     }
     to{

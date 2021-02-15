@@ -1,0 +1,28 @@
+#team-list{
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    top: 15%;
+}
+
+.team-card{
+    opacity: 0;
+    padding: 3vmin;
+    animation: 2s teamAnimation 0s forwards;
+    margin-bottom: 3vmin;
+}
+
+.team-card-body{
+    font-size: 4vmin;
+    text-align: center;
+    padding-top: 5vmin;
+}
+
+@keyframes teamAnimation {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
