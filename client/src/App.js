@@ -23,7 +23,7 @@ function App() {
   }
 
   const contextValue = {
-    serverUrl : 'https://pmc140-pioneers.herokuapp.com'
+    serverUrl : 'https://pmc140-pioneers-test.herokuapp.com'
   }
 
   return (
