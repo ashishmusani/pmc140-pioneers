@@ -70,11 +70,21 @@ app.get('/api/attendees', (req,res)=>{
 
 app.get('/api/questions', (req,res)=>{
     Question.find((err, questions) => {
+
+      console.log("Questions fetched");
+      console.log(questions);
+
       res.send(questions)
     })
   })
   .post('/api/questions', (req,res)=>{
     const newQuestion = req.body;
+
+    //start
+    console.log("Question received");
+    console.log(newQuestion);
+    //end
+    
     Question.create(newQuestion, (err,data)=>{
       if(err){
         return res.status(500).send(err);
