@@ -18,6 +18,17 @@
     padding-top: 5vmin;
 }
 
+.team-linkedin{
+    text-align: center;
+}
+
+.team-linkedin-photo{
+    text-align: center;
+    height: 3vmin;
+}
+
+
+
 @keyframes teamAnimation {
     from{
         opacity: 0;

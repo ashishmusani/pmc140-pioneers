@@ -34,7 +34,6 @@
     font-size: 7vmin;
     line-height: 7vmin;
     height: 100%;
-    color: #5D5C61;
 }
 
 #speaker-designation{
@@ -44,7 +43,7 @@
     animation: 2s nameAnimation 1s forwards;
     font-size: 4vmin;
     line-height: 4vmin;
-    color: #379683;
+    color: #556B2F;
 }
 
 #speaker-details{
@@ -54,7 +53,7 @@
     animation: 2s detailAnimation 1s forwards;
     font-size: 3.5vmin;
     line-height: 5vmin;
-    color: #557A95;
+    color: #00008B;
     text-align: justify;
     text-justify: inter-word;
 }
