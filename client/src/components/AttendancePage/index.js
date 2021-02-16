@@ -14,7 +14,9 @@ const AttendancePage = () => {
     const [name, setName] = useState(localStorage.getItem('name') || "");
     const [email, setEmail] = useState(localStorage.getItem('email') || "");
     const [emailIsValid, setEmailIsValid] = useState(false);
+    const [presentName, setPresentName] = useState(localStorage.getItem('name') || "");
     const [isMarked, setIsMarked] = useState((name !== "") && (email !== ""));
+    // const [isMarked, setIsMarked] = useState(true);
 
     useEffect(()=>{
         console.log(isMarked)
@@ -50,6 +52,7 @@ const AttendancePage = () => {
             .then(res => {
                 if(res.status === 200){
                     alert("Success! You have been marked present.")
+                    setPresentName(name);
                     setName("");
                     setEmail("");
                     localStorage.setItem("name", name);
@@ -72,6 +75,15 @@ const AttendancePage = () => {
         }
     }
     
+    const handleLogout = () => {
+        localStorage.removeItem("name");
+        localStorage.removeItem("email");
+        setPresentName("");
+        setIsMarked(false);
+        setName("");
+        setEmail("");
+    }
+
     // const clearLocalStorage = () => {
     //     localStorage.removeItem("name");
     //     localStorage.removeItem("email");
@@ -79,7 +91,20 @@ const AttendancePage = () => {
 
     // clearLocalStorage();
 
-    return isMarked? (`Hi ${name}! You have been marked present`) : (
+    return isMarked? (
+        <div className="marked-present">
+            <div className="marked-present-info">
+                <img id="present-icon" src="present-marked.png" />
+                Hi {presentName}! You have been marked present.
+            </div>
+            <div className="clear-present">
+                Not <b>{presentName}</b>?
+                <div>
+                    <Button onClick={handleLogout}>Logout</Button>
+                </div>
+            </div>
+        </div>
+    ) : (
         <Form id="attendancePage" >
             <Form.Group className="justify-content-center" as={Row}>
                 <Form.Label column sm="3" md="1" lg="1">

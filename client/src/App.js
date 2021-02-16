@@ -11,6 +11,7 @@ import AttendancePage from './components/AttendancePage';
 import QuestionPage from './components/QuestionPage';
 import AdminPage from './components/AdminPage';
 import TeamPage from './components/TeamPage';
+import FeedbackPage from './components/FeedbackPage';
 
 import urlContext from './contexts/urlContext';
 
@@ -23,7 +24,7 @@ function App() {
   }
 
   const contextValue = {
-    serverUrl : 'https://pmc140-pioneers.herokuapp.com'
+    serverUrl : 'https://pmc140-pioneers-test.herokuapp.com'
   }
 
   return (
@@ -41,14 +42,17 @@ function App() {
             {/* <Route path='/announcements' exact>
               <AnnouncementsPage />
             </Route> */}
-            {/* <Route path='/attendance' exact>
+            <Route path='/attendance' exact>
               <AttendancePage />
-            </Route> */}
+            </Route>
             <Route path='/question' exact>
               <QuestionPage />
             </Route>
             <Route path='/team' exact>
               <TeamPage />
+            </Route>
+            <Route path='/feedback' exact>
+              <FeedbackPage />
             </Route>
             <Route path='/admin' exact>
               <AdminPage />

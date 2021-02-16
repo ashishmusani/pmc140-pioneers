@@ -48,6 +48,7 @@ const AdminPage = () => {
                 setIsProcessing(false);
             })
             .catch(err => {
+                console.log(err)
                 if (err.response && err.response.status === 401){
                     alert("Incorrect credentials!")
                 }

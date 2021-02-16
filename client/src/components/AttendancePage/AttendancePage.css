@@ -2,3 +2,18 @@
     padding: 50px;
 }
 
+.marked-present-info{
+    padding-top: 30vmin;
+    font-size: 5vmin;
+    text-align: center;
+}
+
+#present-icon{
+    width: 10vmin;
+}
+
+.clear-present{
+    padding-top: 5vmin;
+    font-size: 5vmin;
+    text-align: center;
+}
