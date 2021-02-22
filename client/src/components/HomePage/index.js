@@ -33,8 +33,8 @@ const HomePage = () => {
                 <i>Taking teams back in time to leap forward</i>
             </div>
             <div className="homepage-schedule">
-                17 Feb, 2021 9:00 PM EST<br/>
-                18 Feb, 2021 7:30 AM IST
+                3 March, 2021 9:00 PM EST<br/>
+                4 March, 2021 7:30 AM IST
             </div>
             <div className="homepage-info">
                 Zoom meeting link will be available here before the session
