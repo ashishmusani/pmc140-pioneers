@@ -37,7 +37,16 @@ const HomePage = () => {
                 4 March, 2021 7:30 AM IST
             </div>
             <div className="homepage-info">
-                Zoom meeting link will be available here before the session
+                <a href="https://senecacollege-ca.zoom.us/j/95951046144?pwd=NW5TTVpYbWdHbWI1YklZUmQvbVBaZz09"
+                target="_blank">
+                    <img className="homepage-zoom_logo" src="zoom_logo.png"/>
+                </a><br/>
+                <span className="homepage-zoom_details">
+                    Seneca login required 
+                    <a className="homepage-zoom_text" href="seneca_zoom_setup.pdf" target="_blank">
+                        <img className="homepage-zoom_info" src="info_icon.png" />
+                    </a>
+                </span>
             </div>
         </div>        
     )

@@ -68,9 +68,25 @@
 }
 
 .homepage-info{
-    padding-top: 5vmin;
-    animation: 3s infoAnimation 5s infinite;
+    padding-top: 1vmin;
+    font-size: 2.5vmin;
+}
+
+.homepage-zoom_logo{
+    margin-right: 2vmin;
+    height: 8vmin;
+    width: 23vmin;
+    animation: 5s zoomLogoAnimation 5s forwards;
     opacity: 0;
+}
+
+.homepage-zoom_details{
+    animation: 4s zoomDetailsAnimation 5s infinite;
+    opacity: 0;
+}
+
+.homepage-zoom_info{
+    height: 2.5vmin;
 }
 
 @keyframes headerAnimation {
@@ -121,8 +137,13 @@
     }
 }
 
-@keyframes infoAnimation {
+@keyframes zoomLogoAnimation {
     0%   { opacity:0; }
-    50%  { opacity:1; }
+    100% { opacity:1; }
+}
+
+@keyframes zoomDetailsAnimation {
+    0%   { opacity:0; }
+    50%   { opacity:1; }
     100% { opacity:0; }
 }
